@@ -35,7 +35,6 @@ function SearchStack() {
               fontWeight:"300",
               color:theme.colors.textDark
             },
-            title: route.params?.title,
             headerStyle: {
               backgroundColor: theme.colors.softRed,
               shadowColor: "transparent",

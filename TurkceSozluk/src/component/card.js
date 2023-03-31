@@ -13,17 +13,17 @@ export function CardContainer({ children, ...props }) {
   );
 }
 
-export function CardTitle({ children }) {
+export function CardTitle({ children, ...props }) {
   return (
-    <Text fontSize={18} fontWeight="bold">
+    <Text fontSize={18} fontWeight="bold" {...props}>
       {children}
     </Text>
   );
 }
 
-export function CardSummary({ children }) {
+export function CardSummary({ children,...props }) {
   return (
-    <Text color="textMedium" fontSize={14} mt={6}>
+    <Text color="textMedium" fontSize={14} mt={6} {...props}>
       {children}
     </Text>
   );

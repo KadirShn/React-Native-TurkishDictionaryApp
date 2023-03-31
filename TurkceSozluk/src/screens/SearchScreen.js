@@ -5,7 +5,7 @@ import SafeAreaView from "react-native-safe-area-view";
 import theme from "../utils/theme";
 import { useFocusEffect } from "@react-navigation/native";
 import Text from "../component/text";
-import SuggestionCard from "../component/suggestionCard";
+import {SuggestionCard,SuggestionCardDY} from "../component/suggestionCard";
 import SearchHistoryList from "../component/searchHistoryList";
 import HomeSearch from "../component/homeSearch";
 
@@ -34,15 +34,10 @@ function SearchScreen({ navigation }) {
   );
 
   const DATA = [
-    { id: "a1df", title: "Başlık1", summary: "Açıklama1" },
-    { id: "a2df", title: "Başlık2", summary: "Açıklama2" },
-    { id: "a3df", title: "Başlık3", summary: "Açıklama3" },
-    { id: "a4df", title: "Başlık3", summary: "Açıklama3" },
-    { id: "a5df", title: "Başlık3", summary: "Açıklama3" },
-    { id: "a6df", title: "Başlık3", summary: "Açıklama3" },
-    { id: "a7df", title: "Başlık3", summary: "Açıklama3" },
-    { id: "a8df", title: "Başlık3", summary: "Açıklama3" },
-    { id: "a9df", title: "Başlık3", summary: "Açıklama3" },
+    { id: "a1df", title: "Araba"},
+    { id: "a2df", title: "Muharebe"},
+    { id: "a3df", title: "Savaş"},
+    { id: "a4df", title: "Deney"},
   ];
 
   return (
@@ -76,12 +71,23 @@ function SearchScreen({ navigation }) {
             />
 
             <SuggestionCard
-              mt={40}
+              mt={30}
               title="Bir deyim - Atasözü"
               data={homeData?.atasoz[0]}
               onPress={() =>
                 navigation.navigate("Detail", {
                   title: homeData?.atasoz[0].madde,
+                })
+              }
+            />
+
+            <SuggestionCardDY
+              mt={30}
+              title="Sıkça Yapılan Yanlışlara Doğrular"
+              data={homeData?.syyd[0]}
+              onPress={() =>
+                navigation.navigate("Detail", {
+                  title: homeData?.syyd[0].dogrukelime,
                 })
               }
             />
